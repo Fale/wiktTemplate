@@ -28,7 +28,7 @@ foreach ($matches[1] as $match)
 	$match = str_replace(" ", "_", $match);
 
 	// Look for (text|text) regex
-	if (preg_match_all("/\(/i", $match))
+	if (preg_match_all("/\(/i", $match, $dummy))
 	{
 		preg_match_all("/(.*)\((.*)\)(.*)/i", $match, $m);
 		foreach (explode("|", $m[2][0]) as $char) {
@@ -38,7 +38,7 @@ foreach ($matches[1] as $match)
 	}
 	// Look for [Tt] regex
 	// TODO: Make possible to have more than once of these
-	if (preg_match_all("/\[/i", $match))
+	if (preg_match_all("/\[/i", $match, $dummy))
 	{
 		preg_match_all("/(.*)\[(.*)\](.*)/i", $match, $m);
 		foreach (str_split($m[2][0]) as $char) {
