@@ -15,7 +15,8 @@ $wiki->url = "http://it.wiktionary.org/w/api.php";
 // TODO: Handle pages with more than one <syntaxhighlight> tag
 $page = $wiki->getpage("Wikizionario:Bot/Sostituzioni/Template");
 preg_match_all("/<syntaxhighlight.*>(.*)<\/syntaxhighlight>/ims", $page, $matches);
-$content = $matches;
+$content = $matches[1][0];
 
-preg_match_all("/\(ur'\\\{\\\{\\-abbr\\-/i", $content, $matches);
-print_r($matches);
+if( preg_match_all("/\{\{/i", $content))
+	echo "ok\n";
+//print_r($matches);
