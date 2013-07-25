@@ -16,3 +16,6 @@ $wiki->url = "http://it.wiktionary.org/w/api.php";
 $page = $wiki->getpage("Wikizionario:Bot/Sostituzioni/Template");
 preg_match_all("/<syntaxhighlight.*>(.*)<\/syntaxhighlight>/ims", $page, $matches);
 $content = $matches;
+
+preg_match_all("/\(ur'\\\{\\\{\\-abbr\\-/i", $content, $matches);
+print_r($matches);
