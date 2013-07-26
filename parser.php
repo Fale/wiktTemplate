@@ -63,3 +63,6 @@ file_put_contents("query.sql", $q);
 
 // Run the query
 shell_exec("mysql --defaults-file=~/replica.my.cnf -h itwiktionary.labsdb -BN < query.sql > output.out");
+
+// Prepare the fix file
+file_put_contents("pywikipedia/user-fixes.py", $content);
