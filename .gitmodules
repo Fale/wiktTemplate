@@ -1,3 +1,0 @@
-[submodule "pywikipedia"]
-	path = pywikipedia
-	url = https://git.wikimedia.org/git/pywikibot/compat.git
